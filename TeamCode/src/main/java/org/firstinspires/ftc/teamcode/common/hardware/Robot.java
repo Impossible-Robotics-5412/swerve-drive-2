@@ -38,9 +38,9 @@ public class Robot {
         horizontalEncoder = new MotorEx(hardwareMap, "rightFrontMotor").encoder;
         lateralEncoder = new MotorEx(hardwareMap, "leftFrontMotor").encoder;
 
-        intake = new IntakeSubsystem(hardwareMap, isAuto);
+//        intake = new IntakeSubsystem(hardwareMap, isAuto);
 
-        lift = new LiftSubsystem(hardwareMap, isAuto);
+//        lift = new LiftSubsystem(hardwareMap, isAuto);
     }
 
     public Robot(HardwareMap hardwareMap) {
@@ -52,22 +52,23 @@ public class Robot {
     }
 
     public void reset() {
-        lift.liftEncoder.resetEncoder();
-        intake.extensionEncoder.resetEncoder();
+//        lift.liftEncoder.resetEncoder();
+//        intake.extensionEncoder.resetEncoder();
     }
 
     public void read() {
-        intake.read();
-        lift.read();
+//        intake.read();
+//        lift.read();
         for (SwerveModule module : drivetrain.modules) {
             module.read();
         }
     }
 
     public void write() {
-        intake.write();
-        lift.write();
+//        intake.write();
+//        lift.write();
 //        drivetrain.write(currentModuleIndex - 1);
+
 //        currentModuleIndex %= 4;
 //        currentModuleIndex++;
         if (this.isAuto) {
